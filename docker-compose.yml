@@ -82,6 +82,22 @@ services:
           cpus: "0.5"
           memory: 500M
 
+    pgweb:
+    image: sosedoff/pgweb:0.16.2
+    environment: 
+     PGWEB_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres?sslmode=disable         
+    ports:
+     - 8081:8081
+    links:
+      - postgres:postgres
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 500M
+   
+    
+
 volumes:
   postgres_data:
     name: ${POSTGRES_VOLUME_NAME:-evo-ai-postgres-data}
