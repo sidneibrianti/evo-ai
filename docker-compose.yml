@@ -82,7 +82,7 @@ services:
           cpus: "0.5"
           memory: 500M
 
-    pgweb:
+  pgweb:
     image: sosedoff/pgweb:0.16.2
     environment: 
      PGWEB_DATABASE_URL: postgres://postgres:postgres@postgres:5432/postgres?sslmode=disable         
@@ -94,8 +94,7 @@ services:
       resources:
         limits:
           cpus: "0.5"
-          memory: 500M
-   
+          memory: 500M   
     
 
 volumes:
