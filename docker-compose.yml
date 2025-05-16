@@ -1,6 +1,7 @@
 
 services:
   api:
+    build: .
     image: evo-ai-api:latest
     depends_on:
       - postgres

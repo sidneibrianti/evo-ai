@@ -64,7 +64,7 @@ def create_admin_user():
             return False
 
         # Get admin password
-        admin_password = os.getenv("ADMIN_INITIAL_PASSWORD")
+        admin_password = os.getenv("ADMIN_INITIAL_PASSWORD","strongpassword123")
         if not admin_password:
             logger.error("Environment variable ADMIN_INITIAL_PASSWORD not defined")
             return False
