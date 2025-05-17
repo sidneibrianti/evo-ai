@@ -1,8 +1,8 @@
 
 services:
   api:
-    build: .
-    image: evo-ai-api:latest
+    # build: .
+    image: evoapicloud/evo-ai:v0.0.11
     depends_on:
       - postgres
       - redis
@@ -10,6 +10,8 @@ services:
       - "8000:8000"
     environment:
       POSTGRES_CONNECTION_STRING: postgresql://postgres:${POSTGRES_PASSWORD:-postgres}@postgres:5432/evo_ai
+      ADMIN_EMAIL: admin@evoai.com
+      ADMIN_INITIAL_PASSWORD: strongpassword123
       REDIS_HOST: redis
       REDIS_PORT: ${REDIS_PORT:-6379}
       REDIS_PASSWORD: ${REDIS_PASSWORD:-""}
